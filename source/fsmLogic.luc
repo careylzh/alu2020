@@ -1,0 +1,743 @@
+module fsmLogic (
+    input clk,  // clock
+    input rst,  // reset
+    input io_button[5],
+    input io_dip[3][8],
+    output io_led[3][8],
+    output io_seg [8],      // 7-segment LEDs on IO Shield
+    output io_sel [4]     // Digit select on IO Shield
+  ) {
+  sig a[16];
+  sig b[16];
+  sig alufn[6];    
+  sig alu[16];
+  alu alumod;
+  .clk(clk) {
+    // The reset conditioner is used to synchronize the reset signal to the FPGA
+    // clock. This ensures the entire FPGA comes out of reset at the same time.
+
+    .rst(rst){
+      dff store_a[16];      //delay flip flops used for storing values of a,b,alufn
+      dff store_b[16];
+      dff store_alufn[6];
+      fsm state = {IDLE, ADD1,ADD2,SUB1,SUB2,MUL,DIV,AND,OR,XOR,NOR,NAND,A,B,BSL,BSR,ASL,ASR,COMEQ1,COMEQ2,COMLT1,COMLT2,COMLT3,COMLE1,COMLE2,COMLE3,SUCC,FAIL,MANUAL};
+      stateCounter stateCOUNT;
+      multi_seven_seg seg;  //using module multi_seven_seg
+
+    }
+  }
+  
+  always {
+    io_seg = ~seg.seg;
+    io_sel = ~seg.sel;
+    a = 8h0;                //initialising value of a
+    b = 8h0;                //initialising value of b
+    seg.values = {4h0,4h0}; //initialising values of seven segment display
+    io_led[0] = a[7:0];
+    io_led[1] = a[15:8];
+    alufn = io_dip[0][7:2]; //assigning dip switches to alufn input
+    alumod.alufn = alufn;   //connecting alufn to input of module alu
+    alumod.a = a;           //connecting a to input of module alu
+    alumod.b = b;           //connecting a to input of module alu
+    alu = alumod.alu;       //connecting alu to output of module alu
+    io_led = 3x{{8h00}};    // turn LEDs off    
+    /*this is a 16 bit alu so a and b inputs are both 16 bits.*/    
+    case (state.q){                 //initial start state of finite state machine
+    
+      state.IDLE:
+        seg.values = {4h9, 4h9}; //display 99 to represent IDLE state
+        if(io_button[1]){      //if button is pressed, move to next state
+           state.d = state.ADD1;          
+        }
+        
+        if(io_dip[0][0]){           //if the right most switch dip switch is on BEFORE middle io button is pressed, change from auto testing to manual testing
+            state.d = state.MANUAL;
+        }
+    
+      state.MANUAL:                   //manual test state
+        if(io_dip[0][1]){               //if the second right most switch dip switch is on, switch[1] and switch[2] become inputs for a
+        a[7:0] = io_dip[1]; //middle 8 dip switches will be first 8 bits of a
+        a[15:8] = io_dip[2]; //left 8 dip switches will be last 8 bits of a
+        if(io_button[1]){           //if button is pressed, store input a into a d flip flop
+          store_a.d = a;          
+        }
+          
+        } 
+        else {                        //if switch[0][2] is low, switch[1] and switch[2] become inputs for b
+        b[7:0] = io_dip[1];
+        b[15:8] = io_dip[2];
+        if(io_button[2]){           //if button is pressed, store input b into a d flip flop
+          store_b.d = b;
+        }
+        }
+
+        alufn = io_dip[0][7:2];       //assigning dip switches to alufn input
+        if(io_button[3]){             //if button is pressed, store input alufn into a d flip flip
+        store_alufn.d = alufn;}
+          
+        if(io_button[4]){             //if button is pressed, reset a,b,alufn
+        store_a.d = 16b0;
+        store_b.d = 16b0;
+        store_alufn.d = 6b0;}
+        
+        alumod.a = store_a.q;         //input stored value of a into module alu
+        alumod.b = store_b.q;         //input stored value of b into module alu
+        alumod.alufn = store_alufn.q; //input stored value of alufn into module alu
+        alu = alumod.alu;             //assigning alu to output of module alu
+        io_led[1] = alu[7:0];         //display alu output on onboard leds
+        io_led[2] = alu[15:8];
+        io_led[0][0] = 1;
+        io_led[0][7] = alumod.z;
+        io_led[0][6] = alumod.v;
+        io_led[0][5] = alumod.n;
+        if(rst == 1){             //if reseybutton is pressed, return to initial state
+          state.d = state.IDLE;}
+    
+        
+        
+        
+    //-------------------TEST CASES FOR ADDER----------------------------------------//
+    //OVERFLOW 0111 1111 1111 1111+0000 0000 0000 0001 = 1000 0000 0000 0000 (overflow)
+      state.ADD1:	
+        alumod.alufn = 6b0;             //assigning predetermined value of alufn
+        alumod.a = 16b0111111111111111; //assigning predetermined value of a
+        alumod.b = 16b0000000000000001; //assigning predetermined value of b
+        alu = alumod.alu;			          //assign output of alu module to output of mojo
+    
+        seg.values = {4h0, 4h1}; //use 01 to represent ADD OVERFLOW state (ADD1)
+        //testing for error
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == 16b1000000000000000 && alumod.v == 1 && stateCOUNT.inc_state == 1 ){   //test case fail                                    
+          state.d = state.ADD2;      
+        }
+        else if ((alu != 16b1000000000000000 || alumod.v != 1) && stateCOUNT.inc_state == 1){
+        //if alu output does not match expected output, display Err on seven segment display
+        state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           //center 8 leds display first 8 bits of sum
+        io_led[2] = alu[15:8];          //left 8 leds display 8 second bits of sum                                   
+        io_led[0][7] = alumod.z;        //Displaying values of z,v,n on onboard leds
+        io_led[0][6] = alumod.v;
+        io_led[0][5] = alumod.n;
+          
+        if(rst){               //checking switch for manual state
+          state.d = state.IDLE;
+        }
+        
+      state.ADD2:	
+        alumod.alufn = 6b0;             
+        alumod.a = 16b0000000000000001; 
+        alumod.b = 16b0000000000000001; 
+        alu = alumod.alu;			          
+     
+        seg.values = {4h0, 4h2}; //display Add2 . 02 rep Add nooverflow     
+
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == 16b0000000000000010 && alumod.v == 0 && stateCOUNT.inc_state == 1){                                    
+          state.d = state.SUB1; 
+          
+          }
+         else if ((alu != 16b0000000000000010 || alumod.v != 0)  && stateCOUNT.inc_state == 1){
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                            
+        io_led[0][7] = alumod.z;        
+        io_led[0][6] = alumod.v;
+        io_led[0][5] = alumod.n;
+        if(rst == 1){              
+          state.d = state.IDLE;
+        }
+        
+      state.SUB1:	
+        alumod.alufn = 6b000001;             
+        alumod.a = 16b1000000000000000; 
+        alumod.b = 16b0000000000000001; 
+        alu = alumod.alu;			          
+      
+        seg.values = {4h0, 4h3}; //display 03  subtract 03 OVERFLOW SUBTRACT SUB1
+                                       
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0111111111111111 && alumod.v == 1 && stateCOUNT.inc_state == 1 ){                                      
+          state.d = state.SUB2;      
+          }
+        else if ((alu != b0111111111111111 || alumod.v != 1) && stateCOUNT.inc_state == 1){
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                            
+        io_led[0][7] = alumod.z;        
+        io_led[0][6] = alumod.v;
+        io_led[0][5] = alumod.n;
+          
+        if(rst == 1){              
+          state.d = state.IDLE;
+         }
+        
+      state.SUB2:	
+        alumod.alufn = 6b000001;       
+        alumod.a = 16b1000000000000010; 
+        alumod.b = 16b1000000000000001; 
+        alu = alumod.alu;			         
+      
+        seg.values = {4h0, 4h4}; //display 04 SUBTRACT NOOVERFLOW SUB2
+              
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b000000000000001 && alumod.v == 0 && stateCOUNT.inc_state == 1 ){                                 
+          state.d = state.MUL;      
+          }
+        else if ((alu != b000000000000001 || alumod.v != 0) && stateCOUNT.inc_state == 1)     {
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];          
+        io_led[2] = alu[15:8];                                          
+        io_led[0][7] = alumod.z;        
+        io_led[0][6] = alumod.v;
+        io_led[0][5] = alumod.n;
+          
+        if(rst == 1){            
+          state.d = state.IDLE;
+         }
+    
+    //-------------------TEST CASES FOR MULTIPLICATION----------------------------------------//
+
+      state.MUL:	
+        alumod.alufn = 6b110000;           
+        alumod.a = 16b0000000000000010; 
+        alumod.b = 16b0000000000000010; 
+        alu = alumod.alu;			         
+      
+        seg.values = {4h0, 4h5}; //05 multiply case ez MUL
+                                        
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000100 && stateCOUNT.inc_state == 1 ){                                    
+          state.d = state.DIV;      
+          }
+        else if (alu != b0000000000000100 && stateCOUNT.inc_state == 1)     {                    
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];        
+        io_led[2] = alu[15:8];                                        
+          
+        if(rst == 1){             
+          state.d = state.IDLE;
+         }
+        
+        
+      state.DIV:	
+        alumod.alufn = 6b110111;        
+        alumod.a = 16b0000000000000100;
+        alumod.b = 16b0000000000000010; 
+        alu = alumod.alu;			         
+    
+        seg.values = {4h0,4h6 }; //display 06 DIV
+                                 
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000010 && stateCOUNT.inc_state == 1 ){                            
+          state.d = state.AND;      
+          }
+        else if (alu != b0000000000000010 && stateCOUNT.inc_state == 1)     {                              
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];          
+        io_led[2] = alu[15:8];                                          
+          
+        if(rst == 1){          
+          state.d = state.IDLE;
+         }
+    
+     //-------------------TEST CASES FOR BOOLEAN----------------------------------------//
+  
+      state.AND:	
+        alumod.alufn = 6b011000;          
+        alumod.a = 16b0000111100001111;
+        alumod.b = 16b0000111111110000;
+        alu = alumod.alu;			       
+      
+        seg.values = {4h0, 4h7}; //display 07 bool1 AND
+                                     
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000111100000000 && stateCOUNT.inc_state == 1 ){                                     
+          state.d = state.OR;      
+          }
+        else if (alu != b0000111100000000 && stateCOUNT.inc_state == 1)     {                                 
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];          
+        io_led[2] = alu[15:8];                                           
+          
+        if(rst == 1){              
+          state.d = state.IDLE;
+         }
+        
+        
+      state.OR:	
+        alumod.alufn = 6b011110;          
+        alumod.a = 16b0000111100001111; 
+        alumod.b = 16b0000111111110000;
+        alu = alumod.alu;			     
+    
+        seg.values = {4h0, 4h8}; //display 08 OR bool3
+                                   
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000111111111111 && stateCOUNT.inc_state == 1 ){                                      
+          state.d = state.XOR;      
+          }
+        else if (alu != b0000111111111111 && stateCOUNT.inc_state == 1)     {                                 
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];    
+        io_led[2] = alu[15:8];                                
+          
+        if(rst == 1){         
+          state.d = state.IDLE;
+         }
+        
+        
+      state.XOR:	
+        alumod.alufn = 6b010110;           
+        alumod.a = 16b0000111100001111;
+        alumod.b = 16b0000111111110000; 
+        alu = alumod.alu;			       
+     
+        seg.values = {4h0, 4h9}; //display 09 XOR bool3 
+                               
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000011111111 && stateCOUNT.inc_state == 1 ){                                   
+          state.d = state.NAND;      
+          }
+        else if (alu != b0000000011111111 && stateCOUNT.inc_state == 1)     {                                
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];    
+        io_led[2] = alu[15:8];                                   
+          
+        if(rst == 1){         
+          state.d = state.IDLE;
+         }
+        
+        
+      state.NAND:	
+        alumod.alufn = 6b010111;         
+        alumod.a = 16b0000111100001111;
+        alumod.b = 16b0000111111110000;
+        alu = alumod.alu;			    
+      
+        seg.values = {4h1, 4h0}; //display 10 NAND bool4
+                                
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b1111000011111111 && stateCOUNT.inc_state == 1 ){                                  
+          state.d = state.NOR;      
+          }
+        else if (alu != b1111000011111111 && stateCOUNT.inc_state == 1)     {                          
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];       
+        io_led[2] = alu[15:8];                                 
+          
+        if(rst == 1){           
+          state.d = state.IDLE;
+         }
+        
+      state.NOR:	
+        alumod.alufn = 6b010001;           
+        alumod.a = 16b0000111100001111; 
+        alumod.b = 16b0000111111110000;
+        alu = alumod.alu;			      
+        seg.values = {4h1, 4h1}; //display 11 NOR bool5
+                                
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b1111000000000000 && stateCOUNT.inc_state == 1 ){                                      
+          state.d = state.A;      
+          }
+        else if (alu != b1111000000000000 && stateCOUNT.inc_state == 1)     {                    
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];        
+        io_led[2] = alu[15:8];                                        
+          
+        if(rst == 1){         
+          state.d = state.IDLE;
+         }
+        
+      state.A:	
+        alumod.alufn = 6b011010;           
+        alumod.a = 16b0000111100001111; 
+        alumod.b = 16b0000111111110000; 
+        alu = alumod.alu;			          
+    
+        seg.values = {4h1, 4h2}; //display 12 "A" operation bool6  
+                                   
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000111100001111 && stateCOUNT.inc_state == 1 ){                                 
+          state.d = state.B;      
+          }
+        else if (alu != b0000111100001111 && stateCOUNT.inc_state == 1)     {                        
+          }       
+        
+        io_led[1] = alu[7:0];         
+        io_led[2] = alu[15:8];                                      
+          
+        if(rst == 1){            
+          state.d = state.IDLE;
+         }
+        
+        
+      state.B:	
+        alumod.alufn = 6b011100;             
+        alumod.a = 16b0000111100001111;
+        alumod.b = 16b0000111111110000; 
+        alu = alumod.alu;			       
+      
+        seg.values = {4h1, 4h3}; //display 13 "B" operation bool7
+                               
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000111111110000 && stateCOUNT.inc_state == 1 ){                                     
+          state.d = state.BSL;      
+          }
+        else if (alu != b0000111111110000 && stateCOUNT.inc_state == 1)     {             
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];        
+        io_led[2] = alu[15:8];                                      
+          
+        if(rst == 1){          
+          state.d = state.IDLE;
+         }
+     
+      //-------------------TEST CASES FOR BITSHIFTING----------------------------------------//
+ 
+      state.BSL:	
+        alumod.alufn = 6b100000;            
+        alumod.a = 16b0000111100001111; 
+        alumod.b = 16b0000000000000100; 
+        alu = alumod.alu;			          
+      
+        seg.values = {4h1, 4h4}; //display 14 BSL shift1 
+                         
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b1111000011110000 && stateCOUNT.inc_state == 1 ){                                     
+          state.d = state.BSR;      
+          }
+        else if (alu != b1111000011110000 && stateCOUNT.inc_state == 1)     {         
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                      
+          
+        if(rst == 1){               
+          state.d = state.IDLE;
+         } 
+        
+      state.BSR:	
+        alumod.alufn = 6b100001;             
+        alumod.a = 16b0000111100001111; 
+        alumod.b = 16b0000000000000100; 
+        alu = alumod.alu;			         
+      
+        seg.values = {4h1, 4h5}; //display 15 BSR shift2 
+                                      
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000011110000 && stateCOUNT.inc_state == 1 ){                                  
+          state.d = state.ASL;      
+          }
+        else if (alu != b0000000011110000 && stateCOUNT.inc_state == 1)     {                           
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                           
+          
+        if(rst == 1){          
+          state.d = state.IDLE;
+         } 
+       
+      state.ASL:	
+        alumod.alufn = 6b100010;             
+        alumod.a = 16b0000111100001111; 
+        alumod.b = 16b0000000000000100; 
+        alu = alumod.alu;			         
+      
+        seg.values = {4h1, 4h6}; //display 16 ASL shift3 
+                                        
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b1111000011110000 && stateCOUNT.inc_state == 1 ){                                      
+          state.d = state.ASR;      
+          }
+        else if (alu != b1111000011110000 && stateCOUNT.inc_state == 1)     {   
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];       
+        io_led[2] = alu[15:8];                                       
+          
+        if(rst == 1){      
+          state.d = state.IDLE;
+         }     
+
+      state.ASR:	
+        alumod.alufn = 6b100011;         
+        alumod.a = 16b0000111100001111; 
+        alumod.b = 16b0000000000000100;
+        alu = alumod.alu;			          
+      
+        seg.values = {4h1, 4h7}; //display 17 ASR shift4 
+                                      
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000011110000 && stateCOUNT.inc_state == 1 ){                                     
+          state.d = state.COMEQ1;      
+          }
+        else if (alu != b0000000011110000 && stateCOUNT.inc_state == 1)     {                                 
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                          
+          
+        if(rst == 1){             
+          state.d = state.IDLE;
+         } 
+     
+        //-------------------TEST CASES FOR COMPARATOR----------------------------------------//
+  
+      state.COMEQ1:	
+        alumod.alufn = 6b110010;             
+        alumod.a = 16b0000111111111111;
+        alumod.b = 16b0000000000000000; 
+        alu = alumod.alu;			         
+      
+        seg.values = {4h1, 4h8}; //display 18 CE1 compare not equal compare1
+                                        
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000000 && stateCOUNT.inc_state == 1 ){                                     
+          state.d = state.COMEQ2;      
+          }
+        else if (alu != b0000000000000000 && stateCOUNT.inc_state == 1)     {                              
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                          
+          
+        if(rst == 1){               
+          state.d = state.IDLE;
+         }    
+  
+      state.COMEQ2:	
+        alumod.alufn = 6b110010;             
+        alumod.a = 16b1111111111111111;  
+        alumod.b = 16b1111111111111111; 
+        alu = alumod.alu;			         
+      
+        seg.values = {4h1, 4h9}; //display 19 CE2 compare equal compare2
+                                        
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000001 && stateCOUNT.inc_state == 1 ){                                      
+          state.d = state.COMLT1;      
+          }
+        else if (alu != b0000000000000001 && stateCOUNT.inc_state == 1)     {                 
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                            
+          
+        if(rst == 1){            
+          state.d = state.IDLE;
+         }  
+     
+      state.COMLT1:	
+        alumod.alufn = 6b110100;            
+        alumod.a = 16b0000111111111111; 
+        alumod.b = 16b0000000000000000; 
+        alu = alumod.alu;			          
+      
+        seg.values = {4h2, 4h0}; //display 20 compare less than a yes compare3
+                                    
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000000 && stateCOUNT.inc_state == 1 ){                                       
+          state.d = state.COMLT2;      
+          }
+        else if (alu != b0000000000000000 && stateCOUNT.inc_state == 1)     {                             
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];          
+        io_led[2] = alu[15:8];                                    
+          
+        if(rst == 1){             
+          state.d = state.IDLE;
+         }   
+        
+     
+      state.COMLT2:	
+        alumod.alufn = 6b110100;       
+        alumod.a = 16b0000000000000000;     
+        alumod.b = 16b0000111111111111;
+        alu = alumod.alu;			               
+        seg.values = {4h2, 4h1}; //display 21 CL2 less than a no compare4 
+                  
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000001 && stateCOUNT.inc_state == 1 ){                                   
+          state.d = state.COMLT3;      
+          }
+        else if (alu != b0000000000000001 && stateCOUNT.inc_state == 1)     {                                  
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];           
+        io_led[2] = alu[15:8];                                             
+          
+        if(rst == 1){              
+          state.d = state.IDLE;
+         }    
+        
+      state.COMLT3:	
+        alumod.alufn = 6b110100;             
+        alumod.a = 16b1111111111111111;
+        alumod.b = 16b1111111111111111; 
+        alu = alumod.alu;			    
+      
+        seg.values = {4h2, 4h2}; //display 22 compare less than a but equal compare5
+                                   
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000000 && stateCOUNT.inc_state == 1 ){                                    
+          state.d = state.COMLE1;      
+          }
+        else if (alu != b0000000000000000 && stateCOUNT.inc_state == 1)     {    
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];       
+        io_led[2] = alu[15:8];                                       
+          
+        if(rst == 1){           
+          state.d = state.IDLE;
+         }     
+      
+      state.COMLE1:	
+        alumod.alufn = 6b110110;         
+        alumod.a = 16b0000111111111111; 
+        alumod.b = 16b0000000000000000; 
+        alu = alumod.alu;			   
+      
+        seg.values = {4h2, 4h3}; //display 23 compare less than or equal no CLE1 compare6
+                                       
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000000 && stateCOUNT.inc_state == 1 ){                                      
+         state.d = state.COMLE2;      
+          }
+        else if (alu != b0000000000000000 && stateCOUNT.inc_state == 1)     {                             
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];        
+        io_led[2] = alu[15:8];                                          
+          
+        if(rst == 1){         
+          state.d = state.IDLE;
+         }     
+        
+      state.COMLE2:	
+        alumod.alufn = 6b110110;           
+        alumod.a = 16b1111111111111111; 
+        alumod.b = 16b1111111111111111;
+        alu = alumod.alu;			        
+      
+       seg.values = {4h2, 4h4}; //display 24 compare less than or equal yes compare7 
+                                   
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000001 && stateCOUNT.inc_state == 1){                                       
+          state.d = state.COMLE3;      
+          }
+        else if (alu != b0000000000000001 && stateCOUNT.inc_state == 1)     {                               
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];       
+        io_led[2] = alu[15:8];                                        
+          
+        if(rst == 1){              
+          state.d = state.IDLE;
+         }    
+      
+      state.COMLE3:	
+        alumod.alufn = 6b110110;            
+        alumod.b = 16b0000111111111111; 
+        alumod.a = 16b0000000000000000; 
+        alu = alumod.alu;			      
+      
+        seg.values = {4h2, 4h5}; //display compare less than equal no compare8
+                                        
+        if(io_dip[2][7]){
+          alu = alu + b1;}  
+        if(alu == b0000000000000001 && stateCOUNT.inc_state == 1){                                     
+          state.d = state.SUCC;      
+          }
+        else if (alu != b0000000000000001 && stateCOUNT.inc_state == 1)     {                         
+          state.d = state.FAIL;
+          }       
+        
+        io_led[1] = alu[7:0];         
+        io_led[2] = alu[15:8];                                         
+          
+        if(rst == 1){         
+          state.d = state.IDLE;
+         }    
+    
+        
+      state.SUCC:	
+    
+        seg.values = {4h8, 4h8}; //display SUCC . FINAL STATE 88 HUAT AH
+          
+        if(rst == 1){               
+          state.d = state.IDLE;
+          }      
+          
+      state.FAIL:	
+    
+        seg.values = {4h4, 4h4}; //display Fail 44 si si die die wrong 
+          
+        if(rst == 1){               
+          state.d = state.IDLE;      
+          }                  
+    }      
+  }
+}

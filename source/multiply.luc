@@ -1,0 +1,25 @@
+module multiply (
+    input a[8],  // lower 8 bits of 16-bit rc_a
+    input b[8],  // lower 8 bits of 16-bit rc_b
+    
+    output out[16] // lower 16 bits of 32-bit product
+  ) {
+
+  sig m1[8], m2[8], m3[8], m4[8], m5[8], m6[8], m7[8], m8[8]; // partial products
+  
+  
+  always {
+  
+    m1[7:0] = 8x{a[0]} & b[7:0];
+    m2[7:0] = (8x{a[1]} & b[7:0]) << 1; // pad with one zero to make it byte addressable and so on...
+    m3[7:0] = (8x{a[2]} & b[7:0]) << 2;
+    m4[7:0] = (8x{a[3]} & b[7:0]) << 3;
+    m5[7:0] = (8x{a[4]} & b[7:0]) << 4;
+    m6[7:0] = (8x{a[5]} & b[7:0]) << 5;
+    m7[7:0] = (8x{a[6]} & b[7:0]) << 6;
+    m8[7:0] = (8x{a[7]} & b[7:0]) << 7;
+    
+    out = m1 + m2 + m3 + m4 + m5 + m6 + m7 + m8;
+  }
+  
+}

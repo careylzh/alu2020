@@ -1,0 +1,22 @@
+module stateCounter (
+    input clk,  // clock
+    input rst,  // reset
+    
+    output inc_state  //output
+ 
+  ) {
+  
+  //connect the rst signal to the counter
+  dff stateCounter[28](.clk(clk),.rst(rst));
+  
+  always {
+    inc_state = stateCounter.q[27]; 
+    // connects out to the digid of the 26 index of dff stateCounter
+    // every 2^26 cycle , out will be 1 (around 1.6 seconds)
+    stateCounter.d = stateCounter.q + 1;
+    if (stateCounter.q[27]==1) {
+      stateCounter.d[27] = 0;
+    } 
+    
+  }
+}

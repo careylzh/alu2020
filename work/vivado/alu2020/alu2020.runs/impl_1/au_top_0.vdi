@@ -1,0 +1,1328 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Sun Nov  1 03:03:04 2020
+# Process ID: 7048
+# Current directory: C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1
+# Command line: vivado.exe -log au_top_0.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source au_top_0.tcl -notrace
+# Log file: C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0.vdi
+# Journal file: C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1\vivado.jou
+#-----------------------------------------------------------
+source au_top_0.tcl -notrace
+Command: link_design -top au_top_0 -part xc7a35tftg256-1
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+INFO: [Device 21-403] Loading part xc7a35tftg256-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1013.551 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 113 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2020.1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [C:/Users/Carey/Desktop/alu2020/work/constraint/alchitry.xdc]
+Finished Parsing XDC File [C:/Users/Carey/Desktop/alu2020/work/constraint/alchitry.xdc]
+Parsing XDC File [C:/Users/Carey/Desktop/alu2020/work/constraint/io.xdc]
+Finished Parsing XDC File [C:/Users/Carey/Desktop/alu2020/work/constraint/io.xdc]
+Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+Finished Parsing XDC File [C:/Program Files/Alchitry/Alchitry Labs/library/components/au.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1013.551 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+7 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+link_design completed successfully
+link_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1013.551 ; gain = 0.000
+Command: opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command opt_design
+
+Starting DRC Task
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Project 1-461] DRC finished with 0 Errors
+INFO: [Project 1-462] Please refer to the DRC report (report_drc) for more information.
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1013.551 ; gain = 0.000
+
+Starting Cache Timing Information Task
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Ending Cache Timing Information Task | Checksum: 1a8a767da
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1173.477 ; gain = 159.926
+
+Starting Logic Optimization Task
+
+Phase 1 Retarget
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Opt 31-49] Retargeted 0 cell(s).
+Phase 1 Retarget | Checksum: 1fabe4936
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.075 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Opt 31-389] Phase Retarget created 3 cells and removed 3 cells
+
+Phase 2 Constant propagation
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Phase 2 Constant propagation | Checksum: 1fabe4936
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Opt 31-389] Phase Constant propagation created 0 cells and removed 0 cells
+
+Phase 3 Sweep
+Phase 3 Sweep | Checksum: 1f544be2b
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.119 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Opt 31-389] Phase Sweep created 0 cells and removed 0 cells
+
+Phase 4 BUFG optimization
+Phase 4 BUFG optimization | Checksum: 1f544be2b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.147 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Opt 31-662] Phase BUFG optimization created 0 cells of which 0 are BUFGs and removed 0 cells.
+
+Phase 5 Shift Register Optimization
+INFO: [Opt 31-1064] SRL Remap converted 0 SRLs to 0 registers and converted 0 registers of register chains to 0 SRLs
+Phase 5 Shift Register Optimization | Checksum: 1f544be2b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.163 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Opt 31-389] Phase Shift Register Optimization created 0 cells and removed 0 cells
+
+Phase 6 Post Processing Netlist
+Phase 6 Post Processing Netlist | Checksum: 1f544be2b
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.168 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Opt 31-389] Phase Post Processing Netlist created 0 cells and removed 0 cells
+Opt_design Change Summary
+=========================
+
+
+-------------------------------------------------------------------------------------------------------------------------
+|  Phase                        |  #Cells created  |  #Cells Removed  |  #Constrained objects preventing optimizations  |
+-------------------------------------------------------------------------------------------------------------------------
+|  Retarget                     |               3  |               3  |                                              0  |
+|  Constant propagation         |               0  |               0  |                                              0  |
+|  Sweep                        |               0  |               0  |                                              0  |
+|  BUFG optimization            |               0  |               0  |                                              0  |
+|  Shift Register Optimization  |               0  |               0  |                                              0  |
+|  Post Processing Netlist      |               0  |               0  |                                              0  |
+-------------------------------------------------------------------------------------------------------------------------
+
+
+
+Starting Connectivity Check Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1377.152 ; gain = 0.000
+Ending Logic Optimization Task | Checksum: 1c1ba4132
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.227 . Memory (MB): peak = 1377.152 ; gain = 0.000
+
+Starting Power Optimization Task
+INFO: [Pwropt 34-132] Skipping clock gating for clocks with a period < 2.00 ns.
+Ending Power Optimization Task | Checksum: 1c1ba4132
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1377.152 ; gain = 0.000
+
+Starting Final Cleanup Task
+Ending Final Cleanup Task | Checksum: 1c1ba4132
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1377.152 ; gain = 0.000
+
+Starting Netlist Obfuscation Task
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1377.152 ; gain = 0.000
+Ending Netlist Obfuscation Task | Checksum: 1c1ba4132
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+24 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+opt_design completed successfully
+opt_design: Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 1377.152 ; gain = 363.602
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.055 . Memory (MB): peak = 1377.152 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0_opt.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
+Command: report_drc -file au_top_0_drc_opted.rpt -pb au_top_0_drc_opted.pb -rpx au_top_0_drc_opted.rpx
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2020.1/data/ip'.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0_drc_opted.rpt.
+report_drc completed successfully
+Command: place_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command place_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+Starting Placer Task
+INFO: [Place 30-611] Multithreading enabled for place_design using a maximum of 2 CPUs
+
+Phase 1 Placer Initialization
+
+Phase 1.1 Placer Initialization Netlist Sorting
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1394.016 ; gain = 0.000
+Phase 1.1 Placer Initialization Netlist Sorting | Checksum: 14671ea08
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1394.016 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1394.016 ; gain = 0.000
+
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Phase 1.2 IO Placement/ Clock Placement/ Build Placer Device | Checksum: 11cfb8361
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.906 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 1.3 Build Placer Netlist Model
+Phase 1.3 Build Placer Netlist Model | Checksum: 16d192580
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 1.4 Constrain Clocks/Macros
+Phase 1.4 Constrain Clocks/Macros | Checksum: 16d192580
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1397.145 ; gain = 3.129
+Phase 1 Placer Initialization | Checksum: 16d192580
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 2 Global Placement
+
+Phase 2.1 Floorplanning
+Phase 2.1 Floorplanning | Checksum: 1c733aa5f
+
+Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 2.2 Global Placement Core
+
+Phase 2.2.1 Physical Synthesis In Placer
+INFO: [Physopt 32-1035] Found 45 LUTNM shape to break, 17 LUT instances to create LUTNM shape
+INFO: [Physopt 32-1044] Break lutnm for timing: one critical 13, two critical 32, total 45, new lutff created 0
+INFO: [Physopt 32-775] End 1 Pass. Optimized 51 nets or cells. Created 45 new cells, deleted 6 existing cells and moved 0 existing cell
+INFO: [Physopt 32-65] No nets found for high-fanout optimization.
+INFO: [Physopt 32-232] Optimized 0 net. Created 0 new instance.
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-1123] No candidate cells found for Shift Register to Pipeline optimization
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-677] No candidate cells for Shift Register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-526] No candidate cells for BRAM register optimization found in the design
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-846] No candidate cells for URAM register optimization found in the design
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+INFO: [Physopt 32-949] No candidate nets found for HD net replication
+INFO: [Physopt 32-775] End 1 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1397.145 ; gain = 0.000
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization                                     |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+|  LUT Combining                                    |           45  |              6  |                    51  |           0  |           1  |  00:00:00  |
+|  Very High Fanout                                 |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  DSP Register                                     |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register to Pipeline                       |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Shift Register                                   |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  BRAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  URAM Register                                    |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Dynamic/Static Region Interface Net Replication  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Total                                            |           45  |              6  |                    51  |           0  |           8  |  00:00:00  |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Phase 2.2.1 Physical Synthesis In Placer | Checksum: 17867bf58
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1397.145 ; gain = 3.129
+Phase 2.2 Global Placement Core | Checksum: 24925ecaf
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1397.145 ; gain = 3.129
+Phase 2 Global Placement | Checksum: 24925ecaf
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3 Detail Placement
+
+Phase 3.1 Commit Multi Column Macros
+Phase 3.1 Commit Multi Column Macros | Checksum: 16e0cfe82
+
+Time (s): cpu = 00:00:07 ; elapsed = 00:00:04 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.2 Commit Most Macros & LUTRAMs
+Phase 3.2 Commit Most Macros & LUTRAMs | Checksum: 20ae41b3c
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.3 Area Swap Optimization
+Phase 3.3 Area Swap Optimization | Checksum: 13ca362a9
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.4 Pipeline Register Optimization
+Phase 3.4 Pipeline Register Optimization | Checksum: 204e5f117
+
+Time (s): cpu = 00:00:08 ; elapsed = 00:00:05 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.5 Fast Optimization
+Phase 3.5 Fast Optimization | Checksum: 1a7e37047
+
+Time (s): cpu = 00:00:10 ; elapsed = 00:00:07 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.6 Small Shape Detail Placement
+Phase 3.6 Small Shape Detail Placement | Checksum: 16ec11556
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.7 Re-assign LUT pins
+Phase 3.7 Re-assign LUT pins | Checksum: 1a3e0fba2
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.8 Pipeline Register Optimization
+Phase 3.8 Pipeline Register Optimization | Checksum: 121c4c23c
+
+Time (s): cpu = 00:00:11 ; elapsed = 00:00:07 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 3.9 Fast Optimization
+Phase 3.9 Fast Optimization | Checksum: 18b7fd09d
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 1397.145 ; gain = 3.129
+Phase 3 Detail Placement | Checksum: 18b7fd09d
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 1397.145 ; gain = 3.129
+
+Phase 4 Post Placement Optimization and Clean-Up
+
+Phase 4.1 Post Commit Optimization
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+
+Phase 4.1.1 Post Placement Optimization
+Post Placement Optimization Initialization | Checksum: 1c1d24ca3
+
+Phase 4.1.1.1 BUFG Insertion
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-33.904 | TNS=-336.125 |
+Phase 1 Physical Synthesis Initialization | Checksum: 17ae3420d
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1408.484 ; gain = 0.000
+INFO: [Place 46-56] BUFG insertion identified 0 candidate nets. Inserted BUFG: 0, Replicated BUFG Driver: 0, Skipped due to Placement/Routing Conflicts: 0, Skipped due to Timing Degradation: 0, Skipped due to Illegal Netlist: 0.
+Ending Physical Synthesis Task | Checksum: 1560ae8f6
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.041 . Memory (MB): peak = 1408.484 ; gain = 0.000
+Phase 4.1.1.1 BUFG Insertion | Checksum: 1c1d24ca3
+
+Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 1408.484 ; gain = 14.469
+INFO: [Place 30-746] Post Placement Timing Summary WNS=-32.342. For the most accurate timing information please run report_timing.
+Phase 4.1.1 Post Placement Optimization | Checksum: 1158cbe1c
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.484 ; gain = 14.469
+Phase 4.1 Post Commit Optimization | Checksum: 1158cbe1c
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.484 ; gain = 14.469
+
+Phase 4.2 Post Placement Cleanup
+Phase 4.2 Post Placement Cleanup | Checksum: 1158cbe1c
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.484 ; gain = 14.469
+
+Phase 4.3 Placer Reporting
+Phase 4.3 Placer Reporting | Checksum: 1158cbe1c
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.484 ; gain = 14.469
+
+Phase 4.4 Final Placement Cleanup
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1408.484 ; gain = 0.000
+Phase 4.4 Final Placement Cleanup | Checksum: 16076e5fc
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.484 ; gain = 14.469
+Phase 4 Post Placement Optimization and Clean-Up | Checksum: 16076e5fc
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.484 ; gain = 14.469
+Ending Placer Task | Checksum: 12496280e
+
+Time (s): cpu = 00:00:34 ; elapsed = 00:00:32 . Memory (MB): peak = 1408.484 ; gain = 14.469
+INFO: [Common 17-83] Releasing license: Implementation
+65 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+place_design completed successfully
+place_design: Time (s): cpu = 00:00:36 ; elapsed = 00:00:33 . Memory (MB): peak = 1408.484 ; gain = 17.449
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.160 . Memory (MB): peak = 1408.484 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0_placed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_io -file au_top_0_io_placed.rpt
+report_io: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1408.484 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file au_top_0_utilization_placed.rpt -pb au_top_0_utilization_placed.pb
+INFO: [runtcl-4] Executing : report_control_sets -verbose -file au_top_0_control_sets_placed.rpt
+report_control_sets: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1408.484 ; gain = 0.000
+Command: phys_opt_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1408.484 ; gain = 0.000
+
+Starting Physical Synthesis Task
+
+Phase 1 Physical Synthesis Initialization
+INFO: [Physopt 32-721] Multithreading enabled for phys_opt_design using a maximum of 2 CPUs
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.342 | TNS=-322.126 |
+Phase 1 Physical Synthesis Initialization | Checksum: 183fd4efd
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1408.484 ; gain = 0.000
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.342 | TNS=-322.126 |
+
+Phase 2 DSP Register Optimization
+INFO: [Physopt 32-456] No candidate cells for DSP register optimization found in the design.
+INFO: [Physopt 32-775] End 2 Pass. Optimized 0 net or cell. Created 0 new cell, deleted 0 existing cell and moved 0 existing cell
+Phase 2 DSP Register Optimization | Checksum: 183fd4efd
+
+Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 1408.484 ; gain = 0.000
+
+Phase 3 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.342 | TNS=-322.126 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net fsmLogicInstance/Q[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/Q[0].  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q_reg[0]
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/Q[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/D[2]. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_1_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.339 | TNS=-322.033 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.328 | TNS=-322.025 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_8_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_8
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/D[4]. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_2_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.321 | TNS=-322.013 |
+INFO: [Physopt 32-572] Net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_comp_1.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.316 | TNS=-321.960 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.265 | TNS=-321.909 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[2]_0.  Did not re-place instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_7
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[2]_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[2]_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q_reg[0].  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_20
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[2]_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_7_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q_reg[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.265 | TNS=-321.764 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_2_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_2
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_17
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_2_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_2_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.252 | TNS=-321.753 |
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0.  Re-placed instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_comp
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.245 | TNS=-321.719 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.221 | TNS=-321.698 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/D[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_2_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_2
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_2_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_16_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_16
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_2_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_2_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_16_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.219 | TNS=-321.661 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_0.  Did not re-place instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[2]_i_6
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_comp_2.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.210 | TNS=-321.627 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_1.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_18
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.190 | TNS=-321.596 |
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_5_n_0.  Re-placed instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_5
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_5_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.187 | TNS=-321.502 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_9_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_9
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_2.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_15
+INFO: [Physopt 32-134] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_2. Rewiring did not optimize the net.
+INFO: [Physopt 32-572] Net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_2 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_2. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.186 | TNS=-321.501 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_6_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_6
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_6_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_16_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_16
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_6_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_6_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_16_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.185 | TNS=-321.422 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0_repN.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_comp_1
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_0.  Re-placed instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[2]_i_6
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.179 | TNS=-321.370 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3].  Did not re-place instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_19
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/M_stage_q_reg[3] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[2]_i_12_n_0.  Did not re-place instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[2]_i_12
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]. Critical path length was reduced through logic transformation on cell fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_19_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[2]_i_12_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.157 | TNS=-321.352 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/E[0].  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_1
+INFO: [Physopt 32-572] Net fsmLogicInstance/stateCOUNT/E[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/E[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_3_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_3
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/E[0]. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_1_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_3_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.155 | TNS=-320.517 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_17
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_6_comp_1.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.133 | TNS=-320.496 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_26_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_26
+INFO: [Physopt 32-572] Net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_26_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_26_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_26_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_26_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.130 | TNS=-320.453 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_0.  Did not re-place instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[2]_i_6
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_n_0_repN. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[2]_i_3_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.107 | TNS=-320.367 |
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38_n_0.  Re-placed instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.099 | TNS=-320.330 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_5_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_5
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_5_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_12_n_0.  Re-placed instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_12
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_12_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.094 | TNS=-320.324 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38
+INFO: [Physopt 32-572] Net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_4.  Re-placed instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_37
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_4. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.093 | TNS=-320.204 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_13_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_13
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_13_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[0]_i_13_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.092 | TNS=-320.191 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_8_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_8_comp_1
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_23_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_23
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_35_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_35
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_23_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_23_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_35_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.092 | TNS=-320.152 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_1.  Did not re-place instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[0]_i_4
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_1. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_17
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]_1. Critical path length was reduced through logic transformation on cell fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[0]_i_4_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.076 | TNS=-320.126 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_3_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_3
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8_n_0.  Re-placed instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.069 | TNS=-320.089 |
+INFO: [Physopt 32-572] Net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_6_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_6_comp_1.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.066 | TNS=-320.043 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_13_comp_2.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.050 | TNS=-319.971 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_24_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_24
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_35_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_35
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_24_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_24_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_35_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.040 | TNS=-319.930 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_8_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.030 | TNS=-319.923 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_14_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_14
+INFO: [Physopt 32-572] Net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_14_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_4.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_37
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_14_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[3]_i_14_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_4. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.023 | TNS=-319.858 |
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN.  Re-placed instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_comp
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.013 | TNS=-319.847 |
+INFO: [Physopt 32-572] Net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9
+INFO: [Physopt 32-572] Net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0 was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/FSM_sequential_M_state_q[0]_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net fsmLogicInstance/FSM_sequential_M_state_q[3]_i_12_n_0. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/FSM_sequential_M_state_q[3]_i_12_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.009 | TNS=-319.790 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_22_n_0.  Did not re-place instance fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_22
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[2]_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_7_comp_1.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_22_n_0. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-32.002 | TNS=-319.776 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_4.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_37
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38_n_0. Critical path length was reduced through logic transformation on cell fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_38_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_4. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.990 | TNS=-319.668 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_1.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[4]_i_18
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/alumod/add/M_stage_q_reg[3]. Critical path length was reduced through logic transformation on cell fsmLogicInstance/alumod/add/FSM_sequential_M_state_q[4]_i_19_comp_1.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/stateCOUNT/M_stateCounter_q_reg[27]_1. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.990 | TNS=-319.630 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/alu[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/io_led_OBUF[19]_inst_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/io_led_OBUF[15]_inst_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/io_led_OBUF[11]_inst_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0].  Did not re-place instance fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/M_alumod_alu[0] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/comp/FSM_sequential_M_state_q_reg[4].  Did not re-place instance fsmLogicInstance/alumod/comp/io_led_OBUF[8]_inst_i_4
+INFO: [Physopt 32-710] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]. Critical path length was reduced through logic transformation on cell fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2_comp.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/comp/FSM_sequential_M_state_q_reg[4]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.976 | TNS=-319.490 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/data4[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_57_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_62_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_70_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_21_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_26_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_48_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_21_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_26_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_19_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_28_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_28_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_42_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_47_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_20_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[14]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_38_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_47_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_54_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_63_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-81] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.933 | TNS=-319.060 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/D[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/sum_0_carry_i_11_replica
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.929 | TNS=-319.020 |
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/sum_0_carry_i_11_replica
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/M_state_q[4].  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q_reg[4]
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_comp_1
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/alu[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-663] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0].  Re-placed instance fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2_comp
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.915 | TNS=-318.880 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0].  Did not re-place instance fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/data4[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_70_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_48_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_42_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_47_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[14]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_63_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/sum_0_carry_i_11_replica
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/D[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.915 | TNS=-318.880 |
+Phase 3 Critical Path Optimization | Checksum: 183fd4efd
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:16 . Memory (MB): peak = 1408.484 ; gain = 0.000
+
+Phase 4 Critical Path Optimization
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.915 | TNS=-318.880 |
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net fsmLogicInstance/M_state_q[4] was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/M_state_q[4].  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q_reg[4]
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_comp_1
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/alu[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/io_led_OBUF[19]_inst_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/io_led_OBUF[15]_inst_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/io_led_OBUF[11]_inst_i_4_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0].  Did not re-place instance fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2_comp
+INFO: [Physopt 32-81] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]. Replicated 1 times.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.909 | TNS=-318.820 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2_comp_replica
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-735] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN. Optimization improves timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.847 | TNS=-318.200 |
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2_comp_replica
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/data4[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_57_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_62_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_70_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_9_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_21_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_26_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_48_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_13_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_21_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_26_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_19_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[15]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_14_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_28_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_18_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_23_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_28_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_17_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_24_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_42_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_16_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_22_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_27_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_40_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_47_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_10_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_15_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_20_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[14]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_38_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_47_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_54_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_63_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/sum_0_carry_i_11_replica
+INFO: [Physopt 32-572] Net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN was not replicated.
+Resolution: phys_opt_design can be forced to replicate a net driver using the option -force_replication_on_nets <list of net objects>.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/D[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/M_state_q[4].  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q_reg[4]
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/M_state_q[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_3_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0.  Did not re-place instance fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_comp_1
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/FSM_sequential_M_state_q[1]_i_11_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN.  Did not re-place instance fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_comp
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/FSM_sequential_M_state_q[4]_i_29_n_0_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/alu[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/io_led_OBUF[8]_inst_i_2_comp_replica
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/M_alumod_alu[0]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/data4[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[8]_inst_i_70_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[0]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[9]_inst_i_30_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[10]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[2]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[11]_inst_i_48_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[3]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[12]_inst_i_34_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[4]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[13]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[5]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[14]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[6]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[7]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[16]_inst_i_36_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[8]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[17]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[9]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[18]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[10]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[19]_inst_i_42_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[11]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[20]_inst_i_35_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[12]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[21]_inst_i_47_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[13]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[22]_inst_i_33_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_25_0[14]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/io_led_OBUF[23]_inst_i_63_n_0. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-662] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN.  Did not re-place instance fsmLogicInstance/alumod/add/sum_0_carry_i_11_replica
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/alumod/add/FSM_sequential_M_state_q_reg[1]_repN. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net fsmLogicInstance/stateCOUNT/D[1]. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk_IBUF. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-702] Processed net clk. Optimizations did not improve timing on the net.
+INFO: [Physopt 32-619] Estimated Timing Summary | WNS=-31.847 | TNS=-318.200 |
+Phase 4 Critical Path Optimization | Checksum: 183fd4efd
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 1408.484 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1408.484 ; gain = 0.000
+INFO: [Physopt 32-603] Post Physical Optimization Timing Summary | WNS=-31.847 | TNS=-318.200 |
+
+Summary of Physical Synthesis Optimizations
+============================================
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  Optimization   |  WNS Gain (ns)  |  TNS Gain (ns)  |  Added Cells  |  Removed Cells  |  Optimized Cells/Nets  |  Dont Touch  |  Iterations  |  Elapsed   |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+|  DSP Register   |          0.000  |          0.000  |            0  |              0  |                     0  |           0  |           1  |  00:00:00  |
+|  Critical Path  |          0.495  |          3.926  |            3  |              0  |                    44  |           0  |           2  |  00:00:20  |
+|  Total          |          0.495  |          3.926  |            3  |              0  |                    44  |           0  |           3  |  00:00:20  |
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1408.484 ; gain = 0.000
+Ending Physical Synthesis Task | Checksum: 1e3d85541
+
+Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 1408.484 ; gain = 0.000
+INFO: [Common 17-83] Releasing license: Implementation
+643 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+phys_opt_design completed successfully
+phys_opt_design: Time (s): cpu = 00:00:31 ; elapsed = 00:00:21 . Memory (MB): peak = 1408.484 ; gain = 0.000
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.197 . Memory (MB): peak = 1416.504 ; gain = 8.020
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0_physopt.dcp' has been generated.
+Command: route_design
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+Running DRC as a precondition to command route_design
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Vivado_Tcl 4-198] DRC finished with 0 Errors
+INFO: [Vivado_Tcl 4-199] Please refer to the DRC report (report_drc) for more information.
+
+
+Starting Routing Task
+INFO: [Route 35-254] Multithreading enabled for route_design using a maximum of 2 CPUs
+Checksum: PlaceDB: 90cc28de ConstDB: 0 ShapeSum: 8cfa6292 RouteDB: 0
+
+Phase 1 Build RT Design
+Phase 1 Build RT Design | Checksum: 103f1ed83
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 1507.281 ; gain = 78.750
+Post Restoration Checksum: NetGraph: ef188000 NumContArr: 14d96d83 Constraints: 0 Timing: 0
+
+Phase 2 Router Initialization
+
+Phase 2.1 Create Timer
+Phase 2.1 Create Timer | Checksum: 103f1ed83
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 1507.281 ; gain = 78.750
+
+Phase 2.2 Fix Topology Constraints
+Phase 2.2 Fix Topology Constraints | Checksum: 103f1ed83
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.266 ; gain = 84.734
+
+Phase 2.3 Pre Route Cleanup
+Phase 2.3 Pre Route Cleanup | Checksum: 103f1ed83
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:18 . Memory (MB): peak = 1513.266 ; gain = 84.734
+ Number of Nodes with overlaps = 0
+
+Phase 2.4 Update Timing
+Phase 2.4 Update Timing | Checksum: f6c31889
+
+Time (s): cpu = 00:00:22 ; elapsed = 00:00:19 . Memory (MB): peak = 1519.746 ; gain = 91.215
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-30.800| TNS=-307.406| WHS=-0.068 | THS=-0.885 |
+
+Phase 2 Router Initialization | Checksum: 157c9d0e4
+
+Time (s): cpu = 00:00:23 ; elapsed = 00:00:19 . Memory (MB): peak = 1519.852 ; gain = 91.320
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0 %
+  Global Horizontal Routing Utilization  = 0 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 1038
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 1038
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+
+Phase 3 Initial Routing
+Phase 3 Initial Routing | Checksum: 238dee762
+
+Time (s): cpu = 00:00:24 ; elapsed = 00:00:20 . Memory (MB): peak = 1522.145 ; gain = 93.613
+INFO: [Route 35-580] Design has 1 pins with tight setup and hold constraints.
+
+The top 5 pins with tight setup and hold constraints:
+
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|       Launch Clock       |      Capture Clock       |                                                 Pin                                                      |
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+|                    clk_0 |                    clk_0 |                                                        fsmLogicInstance/FSM_sequential_M_state_q_reg[3]/D|
++--------------------------+--------------------------+----------------------------------------------------------------------------------------------------------+
+
+File with complete list of pins: tight_setup_hold_pins.txt
+
+
+Phase 4 Rip-up And Reroute
+
+Phase 4.1 Global Iteration 0
+ Number of Nodes with overlaps = 585
+ Number of Nodes with overlaps = 224
+ Number of Nodes with overlaps = 132
+ Number of Nodes with overlaps = 65
+ Number of Nodes with overlaps = 26
+ Number of Nodes with overlaps = 11
+ Number of Nodes with overlaps = 3
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-33.560| TNS=-332.130| WHS=N/A    | THS=N/A    |
+
+Phase 4.1 Global Iteration 0 | Checksum: 12b6060f3
+
+Time (s): cpu = 00:00:30 ; elapsed = 00:00:24 . Memory (MB): peak = 1523.152 ; gain = 94.621
+
+Phase 4.2 Global Iteration 1
+ Number of Nodes with overlaps = 239
+ Number of Nodes with overlaps = 121
+ Number of Nodes with overlaps = 98
+ Number of Nodes with overlaps = 44
+ Number of Nodes with overlaps = 35
+ Number of Nodes with overlaps = 15
+ Number of Nodes with overlaps = 12
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 9
+ Number of Nodes with overlaps = 5
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 4
+ Number of Nodes with overlaps = 1
+ Number of Nodes with overlaps = 2
+ Number of Nodes with overlaps = 0
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-33.949| TNS=-332.034| WHS=N/A    | THS=N/A    |
+
+Phase 4.2 Global Iteration 1 | Checksum: 21ac491ed
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 1524.160 ; gain = 95.629
+Phase 4 Rip-up And Reroute | Checksum: 21ac491ed
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 1524.160 ; gain = 95.629
+
+Phase 5 Delay and Skew Optimization
+
+Phase 5.1 Delay CleanUp
+
+Phase 5.1.1 Update Timing
+Phase 5.1.1 Update Timing | Checksum: 1cc6d1d05
+
+Time (s): cpu = 00:00:37 ; elapsed = 00:00:29 . Memory (MB): peak = 1524.160 ; gain = 95.629
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-33.466| TNS=-331.190| WHS=N/A    | THS=N/A    |
+
+ Number of Nodes with overlaps = 0
+Phase 5.1 Delay CleanUp | Checksum: 1a3af10e7
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+
+Phase 5.2 Clock Skew Optimization
+Phase 5.2 Clock Skew Optimization | Checksum: 1a3af10e7
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+Phase 5 Delay and Skew Optimization | Checksum: 1a3af10e7
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+
+Phase 6 Post Hold Fix
+
+Phase 6.1 Hold Fix Iter
+
+Phase 6.1.1 Update Timing
+Phase 6.1.1 Update Timing | Checksum: 1bcbf737b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+INFO: [Route 35-416] Intermediate Timing Summary | WNS=-33.441| TNS=-330.942| WHS=0.173  | THS=0.000  |
+
+Phase 6.1 Hold Fix Iter | Checksum: 1bcbf737b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+Phase 6 Post Hold Fix | Checksum: 1bcbf737b
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+
+Phase 7 Route finalize
+
+Router Utilization Summary
+  Global Vertical Routing Utilization    = 0.553695 %
+  Global Horizontal Routing Utilization  = 0.577303 %
+  Routable Net Status*
+  *Does not include unroutable nets such as driverless and loadless.
+  Run report_route_status for detailed report.
+  Number of Failed Nets               = 0
+    (Failed Nets is the sum of unrouted and partially routed nets)
+  Number of Unrouted Nets             = 0
+  Number of Partially Routed Nets     = 0
+  Number of Node Overlaps             = 0
+
+Congestion Report
+North Dir 1x1 Area, Max Cong = 53.1532%, No Congested Regions.
+South Dir 1x1 Area, Max Cong = 45.045%, No Congested Regions.
+East Dir 1x1 Area, Max Cong = 45.5882%, No Congested Regions.
+West Dir 1x1 Area, Max Cong = 70.5882%, No Congested Regions.
+
+------------------------------
+Reporting congestion hotspots
+------------------------------
+Direction: North
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: South
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: East
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+Direction: West
+----------------
+Congested clusters found at Level 0
+Effective congestion level: 0 Aspect Ratio: 1 Sparse Ratio: 0
+
+Phase 7 Route finalize | Checksum: 17c4a80ac
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+
+Phase 8 Verifying routed nets
+
+ Verification completed successfully
+Phase 8 Verifying routed nets | Checksum: 17c4a80ac
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+
+Phase 9 Depositing Routes
+Phase 9 Depositing Routes | Checksum: 1ce5785e5
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+
+Phase 10 Post Router Timing
+INFO: [Route 35-57] Estimated Timing Summary | WNS=-33.441| TNS=-330.942| WHS=0.173  | THS=0.000  |
+
+WARNING: [Route 35-328] Router estimated timing not met.
+Resolution: For a complete and accurate timing signoff, report_timing_summary must be run after route_design. Alternatively, route_design can be run with the -timing_summary option to enable a complete timing signoff at the end of route_design.
+Phase 10 Post Router Timing | Checksum: 1ce5785e5
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+INFO: [Route 35-16] Router Completed Successfully
+
+Time (s): cpu = 00:00:38 ; elapsed = 00:00:30 . Memory (MB): peak = 1527.176 ; gain = 98.645
+
+Routing Is Done.
+INFO: [Common 17-83] Releasing license: Implementation
+662 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+route_design completed successfully
+route_design: Time (s): cpu = 00:00:40 ; elapsed = 00:00:31 . Memory (MB): peak = 1527.176 ; gain = 110.672
+INFO: [Timing 38-480] Writing timing data to binary archive.
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.190 . Memory (MB): peak = 1534.730 ; gain = 7.555
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0_routed.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
+Command: report_drc -file au_top_0_drc_routed.rpt -pb au_top_0_drc_routed.pb -rpx au_top_0_drc_routed.rpx
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+INFO: [Coretcl 2-168] The results of DRC are in file C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0_drc_routed.rpt.
+report_drc completed successfully
+INFO: [runtcl-4] Executing : report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
+Command: report_methodology -file au_top_0_methodology_drc_routed.rpt -pb au_top_0_methodology_drc_routed.pb -rpx au_top_0_methodology_drc_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+INFO: [DRC 23-133] Running Methodology with 2 threads
+INFO: [Coretcl 2-1520] The results of Report Methodology are in file C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/au_top_0_methodology_drc_routed.rpt.
+report_methodology completed successfully
+INFO: [runtcl-4] Executing : report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
+Command: report_power -file au_top_0_power_routed.rpt -pb au_top_0_power_summary_routed.pb -rpx au_top_0_power_routed.rpx
+INFO: [Timing 38-35] Done setting XDC timing constraints.
+Running Vector-less Activity Propagation...
+
+Finished Running Vector-less Activity Propagation
+674 Infos, 1 Warnings, 0 Critical Warnings and 0 Errors encountered.
+report_power completed successfully
+INFO: [runtcl-4] Executing : report_route_status -file au_top_0_route_status.rpt -pb au_top_0_route_status.pb
+INFO: [runtcl-4] Executing : report_timing_summary -max_paths 10 -file au_top_0_timing_summary_routed.rpt -pb au_top_0_timing_summary_routed.pb -rpx au_top_0_timing_summary_routed.rpx -warn_on_violation 
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+CRITICAL WARNING: [Timing 38-282] The design failed to meet the timing requirements. Please see the timing summary report for details on the timing violations.
+INFO: [runtcl-4] Executing : report_incremental_reuse -file au_top_0_incremental_reuse_routed.rpt
+INFO: [Vivado_Tcl 4-1062] Incremental flow is disabled. No incremental reuse Info to report.
+INFO: [runtcl-4] Executing : report_clock_utilization -file au_top_0_clock_utilization_routed.rpt
+INFO: [runtcl-4] Executing : report_bus_skew -warn_on_violation -file au_top_0_bus_skew_routed.rpt -pb au_top_0_bus_skew_routed.pb -rpx au_top_0_bus_skew_routed.rpx
+INFO: [Timing 38-91] UpdateTimingParams: Speed grade: -1, Delay Type: min_max.
+INFO: [Timing 38-191] Multithreading enabled for timing update using a maximum of 2 CPUs
+Command: write_bitstream -force au_top_0.bit -bin_file
+Attempting to get a license for feature 'Implementation' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Implementation' and/or device 'xc7a35t'
+Running DRC as a precondition to command write_bitstream
+INFO: [IP_Flow 19-1839] IP Catalog is up to date.
+INFO: [DRC 23-27] Running DRC with 2 threads
+WARNING: [DRC DPIP-1] Input pipelining: DSP fsmLogicInstance/alumod/comp/cmp0 input fsmLogicInstance/alumod/comp/cmp0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPIP-1] Input pipelining: DSP fsmLogicInstance/alumod/comp/cmp0 input fsmLogicInstance/alumod/comp/cmp0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+WARNING: [DRC DPOP-1] PREG Output pipelining: DSP fsmLogicInstance/alumod/comp/cmp0 output fsmLogicInstance/alumod/comp/cmp0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+WARNING: [DRC DPOP-2] MREG Output pipelining: DSP fsmLogicInstance/alumod/comp/cmp0 multiplier stage fsmLogicInstance/alumod/comp/cmp0/P[47:0] is not pipelined (MREG=0). Pipelining the multiplier function will improve performance and will save significant power so it is suggested whenever possible to fully pipeline this function.  If this multiplier was inferred, it is suggested to describe an additional register stage after this function.  If there is no registered adder/accumulator following the multiply function, two pipeline stages are suggested to allow both the MREG and PREG registers to be used.  If the DSP48 was instantiated in the design, it is suggested to set both the MREG and PREG attributes to 1 when performing multiply functions.
+INFO: [Vivado 12-3199] DRC finished with 0 Errors, 4 Warnings
+INFO: [Vivado 12-3200] Please refer to the DRC report (report_drc) for more information.
+INFO: [Designutils 20-2272] Running write_bitstream with 2 threads.
+Loading data files...
+Loading site data...
+Loading route data...
+Processing options...
+Creating bitmap...
+Creating bitstream...
+Bitstream compression saved 13520512 bits.
+Writing bitstream ./au_top_0.bit...
+Writing bitstream ./au_top_0.bin...
+INFO: [Vivado 12-1842] Bitgen Completed Successfully.
+INFO: [Project 1-118] WebTalk data collection is enabled (User setting is ON. Install Setting is ON.).
+INFO: [Common 17-186] 'C:/Users/Carey/Desktop/alu2020/work/vivado/alu2020/alu2020.runs/impl_1/usage_statistics_webtalk.xml' has been successfully sent to Xilinx on Sun Nov  1 03:05:21 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-83] Releasing license: Implementation
+694 Infos, 5 Warnings, 1 Critical Warnings and 0 Errors encountered.
+write_bitstream completed successfully
+write_bitstream: Time (s): cpu = 00:00:14 ; elapsed = 00:00:17 . Memory (MB): peak = 1980.313 ; gain = 414.590
+INFO: [Common 17-206] Exiting Vivado at Sun Nov  1 03:05:21 2020...
